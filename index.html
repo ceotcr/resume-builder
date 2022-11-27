@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume Builder</title>
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="progress">
+        <div class="step" id="step1">
+            <span class="material-icons">account_circle</span>
+            <span class="title">Profile</span>
+        </div>
+        <div class="step" id="step2">
+            <span class="material-icons">school</span>
+            <span class="title">Education</span>
+        </div>
+        <div class="step" id="step3">
+            <span class="material-icons">fingerprint</span>
+            <span class="title">Skills</span>
+        </div>
+        <div class="step" id="step4">
+            <span class="material-icons">work</span>
+            <span class="title">Experience</span>
+        </div>
+        <div class="step" id="step5">
+            <span class="material-icons">stars</span>
+            <span class="title">Certifications</span>
+        </div>
+        <div class="step" id="step6">
+            <span class="material-icons">add_circle</span>
+            <span class="title">More</span>
+        </div>
+    </div>
+
+    <section id="personal-details">
+        <lottie-player src="./json/profileanim.json" background="transparent" speed=".5"
+            style="width: min(150px, 80vw); height: min(150px, 80vw)" autoplay>
+        </lottie-player>
+
+        <h1 class="head">Personal Details</h1>
+        <br />
+        <div class="form">
+            <div class="form-element">
+                <label for="first-name">First Name:</label>
+                <input id="first-name" name="first-name" type="text" placeholder="Steve" />
+            </div>
+            <div class="form-element">
+                <label for="last-name">Last Name:</label>
+                <input id="last-name" name="last-name" type="text" placeholder="Wolf" />
+            </div>
+            <div class="form-element">
+                <label for="email">Email:</label>
+                <input id="email" name="email" type="email" placeholder="johnysins69@gmail.com" />
+            </div>
+            <div class="form-element">
+                <label for="phone">Phone:</label>
+                <input id="phone" name="phone" type="tel" placeholder="92434XXX64" />
+            </div>
+            <div class="form-element">
+                <label for="address">Address:</label>
+                <input id="address" name="address" type="text" placeholder="Address Goes Here..." />
+            </div>
+            <button class="btn green" onclick="getData(1);">Continue</button>
+        </div>
+    </section>
+    <!-- https://assets1.lottiefiles.com/private_files/lf30_uqm5f9bl.json -->
+
+    <section id="educational-details">
+        <lottie-player src="./json/education.json" background="transparent" speed=".5"
+            style="width: min(150px, 80vw); height: min(150px, 80vw)" autoplay>
+        </lottie-player>
+
+        <h1 class="head">Educational Details</h1>
+        <br />
+        <div class="form">
+            <div class="form-element">
+                <label for="degree">Degree:</label>
+                <input id="degree" name="degree" type="text" placeholder="BTech Computer Science" />
+            </div>
+            <div class="form-element">
+                <label for="college">College Name:</label>
+                <input id="college" name="college" type="text" placeholder="Sanjivani COE" />
+            </div>
+            <div class="form-element">
+                <label for="grade">Grade/CGPA:</label>
+                <input id="grade" name="grade" type="text" placeholder="9.8" />
+                <div><input type="checkbox" name="persuing" id="persuing">&nbsp; Currently studying</div>
+            </div>
+            <div class="form-element bt">
+                <button class="btn red">Previous</button>
+                <button class="btn green" onclick="getData(2)" ;>Continue</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="skill-details">
+        <lottie-player src="./json/skills.json" background="transparent" speed=".5"
+            style="width: min(150px, 80vw); height: min(150px, 80vw)" autoplay>
+        </lottie-player>
+
+        <h1 class="head">Acquired Skills</h1>
+        <br />
+        <div class="form">
+            <div class="form-element">
+                <label for="skill">Skill:</label>
+                <input required id="skill" name="skill" type="text" placeholder="Leadership Abilities" />
+            </div>
+            <div class="form-element bt">
+                <button class="btn temp blue" type="submit" onclick="addSkills();">Add&nbsp;<span
+                        class="material-icons">add_circle</span></button>
+                <button class="btn temp purple" onclick="resetSkills();">Remove&nbsp;<span
+                        class="material-icons">cancel</span></button>
+            </div>
+            <textarea readonly class="form-element" id="skills"> </textarea>
+            <div class="form-element bt">
+                <button class="btn red">Previous</button>
+                <button class="btn green" type="submit" onclick="getData(3);">
+                    Continue
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience-details">
+        <lottie-player src="./json/job.json" background="transparent" speed=".5"
+            style="width: min(150px, 80vw); height: min(150px, 80vw)" autoplay>
+        </lottie-player>
+
+        <h1 class="head">Previous Experience</h1>
+        <br />
+        <div class="form">
+            <div class="form-element">
+                <label for="employer">Employer:</label>
+                <input id="employer" name="employer" type="text" placeholder="Google LLC" />
+            </div>
+            <div class="form-element">
+                <label for="jobtitle">Job Title:</label>
+                <input id="jobtitle" name="jobtitle" type="text" placeholder="Software Engineer" />
+            </div>
+            <div class="form-element">
+                <label for="exp">Experience:</label>
+                <input id="exp" name="exp" type="text" placeholder="6 Months" />
+            </div>
+            <div class="form-element">
+                <label for="place">City:</label>
+                <input id="place" name="place" type="text" placeholder="San Francisco" />
+            </div>
+            <div class="form-element bt">
+                <button class="btn red">Previous</button>
+                <button class="btn red">Skip</button>
+            </div>
+            <button class="btn green" type="submit" onclick="getData(4);">Continue</button>
+        </div>
+    </section>
+
+    <section id="certification-details">
+        <lottie-player src="./json/certificate.json" background="transparent" speed=".5"
+            style="width: min(150px, 80vw); height: min(150px, 80vw)" autoplay>
+        </lottie-player>
+
+        <h1 class="head">Certifications</h1>
+        <br />
+
+        <div class="form">
+            <div class="form-element">
+                <label for="certificate-name">Title:</label>
+                <input id="certificate-name" name="certificate-name" type="text"
+                    placeholder="Machine Learning With Python" />
+            </div>
+
+            <div class="form-element">
+                <label for="issuer">Issuing Authority:</label>
+                <input id="issuer" name="issuer" type="text" placeholder="Grow with Google - Coursera" />
+            </div>
+            <div class="form-element">
+                <label for="issue-date">Issue Date:</label>
+                <input id="issue-date" name="issue-date" type="month" value="2022-12" />
+            </div>
+            <div class="form-element">
+                <label for="certificate-link">Link:</label>
+                <input id="cirtificate-link" name="cirtificate-link" placeholder="paste certificate link here"
+                    type="text" />
+            </div>
+            <div class="form-element bt">
+                <button class="btn red">Previous</button>
+                <button class="btn red">Skip</button>
+            </div>
+            <button class="btn green" type="submit" onclick="getData(5);">Continue</button>
+        </div>
+    </section>
+
+    <div id="popup">
+        <span id="popmsg">Erro Msg Here</span>
+    </div>
+
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>

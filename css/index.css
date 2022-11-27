@@ -1,0 +1,85 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background: linear-gradient(0deg, #390099ff, #9e0059ff, #ff0054ff, #ff5400ff, #ffbd00ff) fixed center;
+    min-height: 100vh;
+}
+
+.btn {
+    padding: 0.7rem 2.5rem;
+    background-color: #D92500;
+    justify-self: flex-end;
+    align-self: end;
+    height: fit-content;
+    width: fit-content;
+}
+
+.btn:hover {
+    outline: #D92500 2px solid;
+}
+
+#progress {
+    background-color: black;
+    position: sticky;
+    z-index: 5;
+    width: 100%;
+    top: 0;
+    padding: 1.5rem;
+    gap: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.step {
+    gap: 0.2rem;
+    flex-wrap: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn.temp.blue {
+    background-color: blue;
+}
+
+.btn.temp.blue:hover {
+    outline: blue 2px solid;
+}
+
+.btn.temp.purple {
+    background-color: purple;
+}
+
+.btn.temp.purple:hover {
+    outline: purple 2px solid;
+}
+
+#skills {
+    background-color: transparent;
+    resize: none;
+    color: white;
+    border: none;
+    text-align: center;
+}
+
+.bt {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+section {
+    background-color: black;
+    padding: 2rem;
+    border-radius: 1rem;
+}
