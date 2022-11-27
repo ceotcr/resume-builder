@@ -1,4 +1,4 @@
-var fname, lname, email, phone, address, degree, college, grade, persuing, skills = [], company, position, experience, workplace;
+var fname, lname, email, phone, address, degree, college, grade, persuing, skills = [], company, position, experience, workplace, certname, issuer, issuedate, certlink;
 
 const popup = document.getElementById("popup");
 const popmsg = document.getElementById("popmsg");
@@ -46,7 +46,11 @@ function getData(i) {
             // change page
             break;
         case 5:
-
+            certname = document.getElementById("cert-name").value;
+            issuer = document.getElementById("issuer").value;
+            issuedate = document.getElementById("issue-date").value;
+            certlink = document.getElementById("cert-link").value;
+            console.log(issuedate)
     }
     // console.log();
 }
@@ -56,7 +60,11 @@ function getData(i) {
 var skillCounter = 0;
 const skill = document.getElementById("skill");
 function addSkills() {
-    if (skillCounter < 5) {
+    if (skill.value == "") {
+        popmsg.innerText = "Skill cannot be empty!"
+        displaypopup();
+    }
+    else if (skillCounter < 5) {
         skills[skillCounter] = skill.value;
         skill.value = '';
         skillCounter++;
@@ -85,4 +93,6 @@ function displaypopup() {
     }, 3000);
 }
 
+
+// creating resume page
 
